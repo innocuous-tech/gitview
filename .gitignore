@@ -5,6 +5,22 @@
 /.pnp
 .pnp.js
 
+#pnpm - our actual dependency manager
+.pnpm-debug.log
+
+# npm - not allowed
+npm-debug.log
+npm-error.log
+package-lock.json
+
+# yarn - not allowed
+yarn.lock
+.yarnrc
+.yarnclean
+.yarn-debug.log
+yarn-debug.log
+yarn-error.log
+
 # testing
 /coverage
 
