@@ -1,6 +1,6 @@
 import { styled, theme } from '~/stitches.config';
 
-export const StyledButton = styled('button', {
+export const Button = styled('button', {
   m: 0,
   boxSizing: 'border-box',
   display: 'flex',

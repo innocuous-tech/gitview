@@ -1,3 +1,6 @@
 node_modules
 .next
 pnpm-lock.yaml
+
+# Next.js dev server ovverwrites any changes
+tsconfig.json
