@@ -1,4 +1,4 @@
-import { styled, theme } from '~/stitches.config';
+import { styled } from '~/stitches.config';
 
 export const Button = styled('button', {
   m: 0,
@@ -9,28 +9,26 @@ export const Button = styled('button', {
   appearance: 'none',
   px: '$16',
   py: '$12',
-  outline: '2px solid',
-  outlineColor: theme.colors.transparent,
   border: '2px solid',
-  borderColor: theme.colors.plum1,
+  borderColor: '$plum9',
   br: '$smol',
-  backgroundColor: theme.colors.plum11,
-  color: theme.colors.plum1,
+  color: '$plum11',
+  backgroundColor: '$plum6',
   transition: '$basic',
 
   '&:hover': {
     cursor: 'pointer',
-    backgroundColor: theme.colors.plum10,
-    transition: theme.transitions.basic,
+    backgroundColor: '$plum7',
+    transition: '$basic',
   },
 
   '&:focus': {
-    outlineColor: theme.colors.plum11,
-    transition: theme.transitions.basic,
+    backgroundColor: '$plum7',
+    transition: '$basic',
   },
 
   '&:active': {
-    backgroundColor: theme.colors.plum9,
-    outlineColor: theme.colors.plum9,
+    backgroundColor: '$plum8',
+    transition: '$basic',
   },
 });
