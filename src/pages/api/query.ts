@@ -30,10 +30,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {
     console.error(error);
 
-    const searchParams = new URLSearchParams({
-      error: 'We could not find this repository. Perhaps there is a typo?',
-    });
-
-    return res.status(404).redirect(`/?${searchParams}`);
+    return res.status(404).redirect(`/does/not/exist`);
   }
 }
