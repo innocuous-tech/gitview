@@ -66,6 +66,16 @@ export default function CommitList({ ownerName, repoName, commits }: GetStaticPr
    * @see https://swr.vercel.app/docs/pagination#useswrinfinite
    */
 
+  const committerMap = commits.reduce((prev, curr) => {
+    return { ...prev, [curr.author]: !!prev[curr.author] ? prev[curr.author] + 1 : 1 };
+  }, {} as { [key: string]: number });
+
+  const mostCommits = Object.values(committerMap).sort((a, b) => b - a)[0];
+
+  const biggestCommitter = Object.keys(committerMap).find(
+    committer => committerMap[committer] === mostCommits,
+  );
+
   return (
     <>
       <Head>
@@ -91,6 +101,27 @@ export default function CommitList({ ownerName, repoName, commits }: GetStaticPr
           },
         }}
       >
+        <Box
+          css={{
+            display: 'flex',
+            gap: '$12',
+            backgroundColor: '$mauve2',
+            borderRadius: '$smol',
+            border: '1px solid',
+            borderColor: '$mauve7',
+            color: '$mauve11',
+            fontWeight: '$bold',
+            p: '$16',
+
+            '@mobile': {
+              flexDirection: 'column',
+              m: '$12',
+            },
+          }}
+        >
+          {biggestCommitter} has the most commits recently, with {mostCommits} commits.
+        </Box>
+
         {commits.map(commit => {
           return (
             <Box
